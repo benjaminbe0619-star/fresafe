@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, createJSONStorage } from 'zustand/middleware'
 
 const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL as string | undefined) ?? ''
 
@@ -480,8 +480,34 @@ export const useStore = create<Store>()(
     }),
     {
       name: 'abi-pos-cache-v1',
+      // El caché local es solo para abrir rápido; el servidor es la fuente de verdad.
+      // Si el navegador se queda sin espacio, se ignora en silencio — nunca bloquea un guardado.
+      storage: createJSONStorage(() => ({
+        getItem: (k: string) => {
+          try {
+            return localStorage.getItem(k)
+          } catch {
+            return null
+          }
+        },
+        setItem: (k: string, v: string) => {
+          try {
+            localStorage.setItem(k, v)
+          } catch {
+            /* cuota llena: continuar sin caché */
+          }
+        },
+        removeItem: (k: string) => {
+          try {
+            localStorage.removeItem(k)
+          } catch {
+            /* ignorar */
+          }
+        },
+      })),
       partialize: (state) => ({
-        products: state.products,
+        // Las fotos NO se cachean (pesan demasiado); llegan del servidor al sincronizar.
+        products: state.products.map((p) => ({ ...p, imageDataUrl: null })),
         sales: state.sales,
         records: state.records,
         settings: state.settings,
