@@ -175,8 +175,7 @@ export default function Socio() {
 
           {movs.length === 0 ? (
             <p className="text-sm text-slate-400 text-center py-4">
-              Registra aquí lo que el socio prestó (refris, mesas, teles…), lo que aportó por su porcentaje y cada
-              pago que se le haga.
+              Registra préstamos, aportes y pagos del socio.
             </p>
           ) : (
             <div className="space-y-1">

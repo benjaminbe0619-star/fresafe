@@ -313,7 +313,7 @@ export default function Ventas() {
           onClick={() => setOpenMoney(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full"
+            className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-[11px] uppercase font-bold tracking-[0.08em] text-slate-400">Dinero total</div>
@@ -408,7 +408,7 @@ export default function Ventas() {
 
       {confirmRefund && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full">
             <h3 className="text-[11px] font-bold uppercase tracking-[0.08em] text-slate-400 mb-2">
               Devolver dinero
             </h3>
@@ -416,13 +416,10 @@ export default function Ventas() {
               {formatMXN(confirmRefund.totalCents)}
             </div>
             <p className="text-sm text-slate-500 mb-4">
-              Se devolverá el monto completo a la tarjeta del cliente (
-              {confirmRefund.items.map((i) => `${i.qty}× ${i.name}`).join(', ')}). La venta quedará
-              marcada como «Devuelta» y dejará de contar en los totales.
+              Se devuelve el total a la tarjeta del cliente y la venta queda como «Devuelta».
             </p>
             <div className="rounded-lg bg-amber-50 border border-amber-200 p-3 mb-5 text-xs text-amber-900">
-              Esta acción no se puede deshacer. Mercado Pago procesa la devolución y el dinero
-              regresa al cliente en unos días, según su banco.
+              Irreversible. El dinero tarda unos días en reflejarse, según el banco.
             </div>
             <div className="flex gap-2">
               <button
@@ -446,10 +443,10 @@ export default function Ventas() {
 
       {confirmDelete && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full">
             <h3 className="font-bold text-lg mb-2">¿Estás seguro?</h3>
             <p className="text-slate-600 mb-5">
-              Esta venta se eliminará y los totales de arriba se recalcularán automáticamente.
+              La venta se eliminará y los totales se recalculan.
             </p>
             <div className="flex gap-2">
               <button

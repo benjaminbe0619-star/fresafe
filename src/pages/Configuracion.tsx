@@ -107,8 +107,7 @@ export default function Configuracion() {
           color="text-purple-600"
         />
         <div className="text-xs text-slate-500 mt-2 leading-relaxed">
-          Porcentaje que MP descuenta por cobro con tarjeta (incluye IVA). Default{' '}
-          <b>4.06%</b> = 3.5% + IVA, tarifa al contado con plazo de depósito a 1 mes.
+          Lo que MP descuenta por cobro con tarjeta (IVA incluido).
         </div>
       </div>
 
@@ -117,8 +116,7 @@ export default function Configuracion() {
           Respaldo y migración
         </div>
         <div className="text-xs text-slate-500 mb-3 leading-relaxed">
-          Exporta tus productos, configuración y ventas a un archivo JSON. Útil para mover los
-          datos entre dispositivos o respaldar antes de pruebas.
+          Exporta o importa todos tus datos en un archivo.
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <button
@@ -154,8 +152,7 @@ export default function Configuracion() {
           </div>
         )}
         <div className="text-xs text-slate-500 mt-3 leading-relaxed">
-          ⚠ Al importar se <b>reemplaza todo</b> lo que tienes ahora (productos, ventas,
-          inversión, etc.). Si quieres conservar lo actual, exporta primero.
+          ⚠ Importar <b>reemplaza todo</b>. Exporta primero si quieres conservar lo actual.
         </div>
       </div>
       </div>

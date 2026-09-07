@@ -84,7 +84,7 @@ export default function Mermas() {
     <PageShell>
       <PageHeader
         title="Mermas"
-        subtitle="Lo que se pierde también cuesta. Regístralo para que la ganancia sea real y sepas dónde apretar."
+        subtitle="Registra lo que se pierde para que la ganancia sea real."
         back={{ to: '/administrar', label: 'Administrar' }}
         actions={
           <button onClick={openNew} className={primaryBtn}>
@@ -108,7 +108,7 @@ export default function Mermas() {
       <Card title="Historial de mermas">
         {mermas.length === 0 ? (
           <p className="text-sm text-slate-400 text-center py-6">
-            Cuando algo se pierda (se cayó, caducó, salió mal), regístralo aquí en dos toques.
+            Registra aquí lo que se pierda.
           </p>
         ) : (
           <div className="space-y-1">

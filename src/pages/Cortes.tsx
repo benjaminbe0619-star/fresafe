@@ -57,8 +57,8 @@ export default function Cortes() {
         </div>
         <div className="text-3xl font-bold mt-1 tabular-nums">{formatMXN(esperadoCents)}</div>
         <div className="text-xs text-slate-400 mt-1">
-          Fondo de cambio ({formatMXN(changeFundCents)}) + ventas en efectivo desde el último corte
-          {lastCorteTs > 0 ? ` (${fmtDate(lastCorteTs)})` : ''}. No descuenta gastos pagados de la caja.
+          Fondo de cambio ({formatMXN(changeFundCents)}) + efectivo vendido desde el último corte
+          {lastCorteTs > 0 ? ` (${fmtDate(lastCorteTs)})` : ''}.
         </div>
         <button
           onClick={openNew}
@@ -71,7 +71,7 @@ export default function Cortes() {
       <Card title="Historial de cortes">
         {cortes.length === 0 ? (
           <p className="text-sm text-slate-400 text-center py-6">
-            Al cerrar el día, cuenta el efectivo y regístralo aquí. Cualquier diferencia queda anotada.
+            Al cerrar el día, cuenta el efectivo y regístralo.
           </p>
         ) : (
           <div className="space-y-1">

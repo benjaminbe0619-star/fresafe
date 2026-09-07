@@ -129,7 +129,7 @@ export default function ModalCobroTarjeta({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6">
         {state.kind === 'confirm' && (
           <>
             <h3 className="text-xl font-bold mb-1">¿Cobrar con tarjeta?</h3>
@@ -152,8 +152,7 @@ export default function ModalCobroTarjeta({
             </div>
 
             <p className="text-slate-600 text-sm mb-5">
-              Al continuar, la terminal Point se activará y mostrará el monto. El cliente debe
-              acercar o insertar su tarjeta.
+              La terminal mostrará el monto al continuar.
             </p>
             <div className="flex gap-2">
               <button
@@ -190,7 +189,7 @@ export default function ModalCobroTarjeta({
                 <span className="text-sm font-semibold text-slate-800">
                   {state.status === 'created'
                     ? 'Enviando a la terminal...'
-                    : 'El cliente debe pasar la tarjeta en la terminal.'}
+                    : 'Pasa la tarjeta en la terminal.'}
                 </span>
               </div>
               <div className="text-xs text-slate-700 mt-2">
@@ -199,15 +198,9 @@ export default function ModalCobroTarjeta({
             </div>
 
             <div className="bg-red-50 border-2 border-red-200 rounded-lg p-3 mb-4">
-              <div className="font-bold text-red-900 text-sm mb-1">
-                Para cancelar este cobro:
-              </div>
               <div className="text-xs text-slate-700 leading-relaxed">
-                Presiona la <b className="text-red-700">flecha izquierda (←)</b> en la terminal
-                Point — esa es la única forma de detener el cobro de inmediato. Mercado Pago no
-                permite apagar la terminal desde el sistema una vez que recibió la orden. Si
-                nadie hace nada, la orden expira sola en{' '}
-                <span className="font-bold">{secondsLeft}s</span>.
+                Para cancelar: presiona la <b className="text-red-700">flecha ← en la terminal</b>.
+                Expira sola en <span className="font-bold">{secondsLeft}s</span>.
               </div>
             </div>
 
@@ -220,8 +213,8 @@ export default function ModalCobroTarjeta({
               {cancelling
                 ? 'Intentando cancelar...'
                 : state.cancelAttempted
-                  ? 'No se pudo cancelar — usa la flecha ← de la terminal'
-                  : 'Intentar cancelar (solo si aún no llegó a la terminal)'}
+                  ? 'No se pudo — usa la flecha ← de la terminal'
+                  : 'Intentar cancelar'}
             </button>
           </>
         )}

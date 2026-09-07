@@ -31,7 +31,7 @@ export function Modal({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div
-        className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md max-h-[90vh] overflow-auto"
+        className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-lg max-h-[90vh] overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <h3 className="text-xl font-bold mb-4">{title}</h3>
@@ -133,7 +133,7 @@ export function ConfirmDelete({
 }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full">
+      <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full">
         <h3 className="font-bold text-lg mb-2">¿Estás seguro?</h3>
         <p className="text-slate-600 mb-5">{text}</p>
         <div className="flex gap-2">

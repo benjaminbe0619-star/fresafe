@@ -112,7 +112,7 @@ export default function Menu() {
           </Link>
           <h2 className="text-2xl lg:text-3xl font-bold mt-1">Menú</h2>
           <p className="hidden lg:block text-sm text-slate-500 mt-1">
-            Administra los productos que se venden. Edita precios, costos e imágenes aquí.
+            Productos, precios y categorías.
           </p>
         </div>
         <div className="shrink-0 flex gap-2">
@@ -380,8 +380,7 @@ export default function Menu() {
             </div>
           )}
           <p className="text-xs text-slate-400 mt-4">
-            Al renombrar, todos sus productos se actualizan. Al eliminar, los productos no se
-            borran: quedan «Sin categoría».
+            Renombrar actualiza sus productos; eliminar los deja «Sin categoría».
           </p>
           <button
             onClick={() => setCatsOpen(false)}
@@ -405,7 +404,7 @@ export default function Menu() {
 
       {editing && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md max-h-[90vh] overflow-auto">
+          <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-lg max-h-[90vh] overflow-auto">
             <h3 className="text-xl font-bold mb-4">
               {editing === 'new' ? 'Nuevo producto' : 'Editar producto'}
             </h3>
@@ -503,7 +502,7 @@ export default function Menu() {
 
       {confirmDelete && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full">
             <h3 className="font-bold text-lg mb-2">¿Estás seguro?</h3>
             <p className="text-slate-600 mb-5">
               Se eliminará el producto «{confirmDelete.name}».

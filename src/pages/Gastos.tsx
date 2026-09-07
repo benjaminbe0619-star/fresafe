@@ -83,7 +83,7 @@ export default function Gastos() {
     <PageShell>
       <PageHeader
         title="Gastos"
-        subtitle="Todo lo que sale de dinero. Los fijos se descuentan de la ganancia día a día; los variables, el día que se pagan."
+        subtitle="Todo lo que sale de dinero."
         back={{ to: '/administrar', label: 'Administrar' }}
       />
 
@@ -112,7 +112,7 @@ export default function Gastos() {
         >
           {fijos.length === 0 ? (
             <p className="text-sm text-slate-400 text-center py-6">
-              Registra renta, luz, internet, sueldos… Se descuentan de la ganancia día a día.
+              Renta, luz, internet…
             </p>
           ) : (
             <div className="space-y-1">
@@ -177,7 +177,7 @@ export default function Gastos() {
         >
           {variables.length === 0 ? (
             <p className="text-sm text-slate-400 text-center py-6">
-              Compras de fresas, crema, desechables, reparaciones… Todo lo que salga de dinero.
+              Fresas, crema, desechables…
             </p>
           ) : (
             <div className="space-y-1">
@@ -240,7 +240,7 @@ export default function Gastos() {
             </div>
             {modal === 'fijo' && (
               <p className="text-xs text-slate-500">
-                Los gastos fijos se descuentan de la ganancia prorrateados por día, a partir de la fecha indicada.
+                Se prorratea por día desde la fecha indicada.
               </p>
             )}
           </div>

@@ -99,7 +99,7 @@ export default function Pedidos() {
     <PageShell>
       <PageHeader
         title="Pedidos"
-        subtitle="Los pedidos de Rappi y Uber Eats de hoy. El cliente ya pagó en la app: aquí solo se registran."
+        subtitle="Pedidos de Rappi y Uber Eats de hoy."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 items-start">

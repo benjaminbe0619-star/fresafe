@@ -76,7 +76,7 @@ export default function Canal({ channel }: { channel: 'rappi' | 'uber' }) {
             <input value={pct} onChange={(e) => setPct(e.target.value)} inputMode="decimal" className={inputCls} />
           </Field>
           <p className="text-xs text-slate-500 mt-2">
-            Se descuenta sola de la ganancia en cada pedido de este canal. Ajústala al porcentaje de tu contrato.
+            Se descuenta sola de la ganancia en cada pedido.
           </p>
           <button
             onClick={savePct}
@@ -95,9 +95,7 @@ export default function Canal({ channel }: { channel: 'rappi' | 'uber' }) {
             <span className="font-semibold text-slate-800 text-sm">Pendiente de conexión</span>
           </div>
           <p className="text-sm text-slate-500">
-            El negocio ya está dado de alta en {meta.label}. Para que los pedidos caigan solos en la pantalla de
-            Pedidos hay que solicitar acceso a su API de socios desde la cuenta del comercio. Mientras tanto, se
-            registran a mano en unos segundos y las cuentas quedan exactas.
+            Falta solicitar acceso a la API de socios de {meta.label}; mientras, los pedidos se registran a mano.
           </p>
         </Card>
 

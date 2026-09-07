@@ -124,8 +124,7 @@ export default function Paletas() {
           <Card title="Sus productos">
             {paleteroProducts.length === 0 ? (
               <p className="text-sm text-slate-400 text-center py-4">
-                En el Menú, marca un producto como «De paletero» y aparecerá aquí. Al venderlo, la cuenta se lleva
-                sola.
+                Marca productos como «De paletero» en el Menú.
               </p>
             ) : (
               <div className="space-y-1">
@@ -179,8 +178,7 @@ export default function Paletas() {
               </Field>
             </div>
             <p className="text-xs text-slate-500">
-              De cada paleta vendida, FresaFé se queda este porcentaje y el resto es del{' '}
-              {cfgName.trim() || 'paletero'}. Aplica a ventas nuevas.
+              FresaFé se queda este % de cada paleta; el resto es del dueño.
             </p>
           </div>
           <FormButtons onCancel={() => setRulesOpen(false)} onSave={saveCfg} />

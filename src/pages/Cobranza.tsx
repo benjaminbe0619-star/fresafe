@@ -406,7 +406,7 @@ export default function Cobranza() {
 
       {recovery && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6">
             <h3 className="text-[11px] font-bold uppercase tracking-[0.08em] text-slate-400 mb-2">
               Cobro en curso recuperado
             </h3>
@@ -414,8 +414,7 @@ export default function Cobranza() {
               {formatMXN(recovery.totalCents)}
             </div>
             <p className="text-sm text-slate-500 mb-5">
-              La página se recargó con un cobro con tarjeta en curso (
-              {recovery.items.map((i) => `${i.qty}× ${i.name}`).join(', ')}). ¿Qué quieres hacer?
+              Había un cobro en curso: {recovery.items.map((i) => `${i.qty}× ${i.name}`).join(', ')}.
             </p>
             <div className="flex gap-2">
               <button

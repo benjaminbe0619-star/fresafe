@@ -134,7 +134,7 @@ export default function Sueldos() {
     <PageShell>
       <PageHeader
         title="Sueldos"
-        subtitle="Empleados, pagos y adelantos. La nómina se descuenta sola de la ganancia, día a día."
+        subtitle="Empleados, pagos y adelantos."
         back={{ to: '/administrar', label: 'Administrar' }}
         actions={
           <button onClick={() => openEmp()} className={primaryBtn}>
@@ -160,7 +160,7 @@ export default function Sueldos() {
         <Card title="Empleados">
           {empleados.length === 0 ? (
             <p className="text-sm text-slate-400 text-center py-6">
-              Da de alta a cada empleado con su sueldo. Se descuenta solo de la ganancia, día a día.
+              Da de alta a tus empleados con su sueldo.
             </p>
           ) : (
             <div className="space-y-3">
@@ -286,7 +286,7 @@ export default function Sueldos() {
               </Field>
             </div>
             <p className="text-xs text-slate-500">
-              El sueldo se descuenta de la ganancia real automáticamente, prorrateado por día.
+              Se descuenta de la ganancia automáticamente.
             </p>
           </div>
           <FormButtons
