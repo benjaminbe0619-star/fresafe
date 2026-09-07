@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore, RecordItem, Settings } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   Card,
   ConfirmDelete,
@@ -306,7 +306,7 @@ export default function Socio() {
               <Field label="Monto (MXN)">
                 <input
                   value={movAmount}
-                  onChange={(e) => setMovAmount(e.target.value)}
+                  onChange={(e) => setMovAmount(formatAmountInput(e.target.value))}
                   inputMode="decimal"
                   className={inputCls}
                   placeholder="0.00"

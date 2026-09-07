@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useStore, RecordItem } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   Card,
   ConfirmDelete,
@@ -275,7 +275,7 @@ export default function Sueldos() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <Field label="Sueldo (MXN)">
-                <input value={empSalary} onChange={(e) => setEmpSalary(e.target.value)} inputMode="decimal" className={inputCls} placeholder="0.00" />
+                <input value={empSalary} onChange={(e) => setEmpSalary(formatAmountInput(e.target.value))} inputMode="decimal" className={inputCls} placeholder="0.00" />
               </Field>
               <Field label="Se le paga cada…">
                 <select value={empFreq} onChange={(e) => setEmpFreq(e.target.value)} className={inputCls}>
@@ -305,7 +305,7 @@ export default function Sueldos() {
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <Field label="Monto (MXN)">
-                <input value={movAmount} onChange={(e) => setMovAmount(e.target.value)} inputMode="decimal" className={inputCls} placeholder="0.00" autoFocus />
+                <input value={movAmount} onChange={(e) => setMovAmount(formatAmountInput(e.target.value))} inputMode="decimal" className={inputCls} placeholder="0.00" autoFocus />
               </Field>
               <Field label="Fecha">
                 <input type="date" value={movDate} onChange={(e) => setMovDate(e.target.value)} className={inputCls} />

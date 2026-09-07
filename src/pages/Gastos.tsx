@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useStore, RecordItem } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   Card,
   ConfirmDelete,
@@ -228,7 +228,7 @@ export default function Gastos() {
               <Field label={modal === 'fijo' ? 'Monto mensual (MXN)' : 'Monto (MXN)'}>
                 <input
                   value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+                  onChange={(e) => setAmount(formatAmountInput(e.target.value))}
                   inputMode="decimal"
                   className={inputCls}
                   placeholder="0.00"

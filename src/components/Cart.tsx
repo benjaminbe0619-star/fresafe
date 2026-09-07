@@ -157,14 +157,14 @@ export default function Cart({ onPayCash, onPayCard, onClose }: Props) {
           <button
             onClick={onPayCard}
             disabled={cart.length === 0}
-            className="bg-slate-900 active:bg-slate-800 lg:hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
+            className="bg-blue-600 active:bg-blue-700 lg:hover:bg-blue-700 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
           >
             Cobrar con tarjeta
           </button>
           <button
             onClick={onPayCash}
             disabled={cart.length === 0}
-            className="bg-pink-600 active:bg-pink-700 lg:hover:bg-pink-700 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
+            className="bg-emerald-200 active:bg-emerald-300 lg:hover:bg-emerald-300 disabled:opacity-30 disabled:cursor-not-allowed text-emerald-950 font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
           >
             Cobrar en efectivo
           </button>

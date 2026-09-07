@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import { useStore } from '../store/useStore'
 
 // Cobro de un monto libre con tarjeta (sin pasar por el catálogo).
@@ -33,7 +33,7 @@ export default function ModalCobroPersonalizado({
           <input
             autoFocus
             value={amount}
-            onChange={(e) => setAmount(e.target.value.replace(/[^\d.]/g, ''))}
+            onChange={(e) => setAmount(formatAmountInput(e.target.value))}
             onKeyDown={(e) => {
               if (e.key === 'Enter' && valid) onCharge(amountCents, concept.trim())
               if (e.key === 'Escape') onCancel()

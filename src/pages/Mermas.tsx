@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useStore, RecordItem } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   Card,
   ConfirmDelete,
@@ -168,7 +168,7 @@ export default function Mermas() {
               <Field label="Costo perdido (MXN)">
                 <input
                   value={cost}
-                  onChange={(e) => setCost(e.target.value)}
+                  onChange={(e) => setCost(formatAmountInput(e.target.value))}
                   inputMode="decimal"
                   className={inputCls}
                   placeholder="0.00"

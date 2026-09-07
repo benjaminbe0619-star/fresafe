@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useStore, RecordItem } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import { Card, ConfirmDelete, Field, FormButtons, Modal, inputCls, fmtDate } from '../components/ui'
 
 export default function Cortes() {
@@ -117,7 +117,7 @@ export default function Cortes() {
             <Field label="¿Cuánto hay contado? (MXN)">
               <input
                 value={counted}
-                onChange={(e) => setCounted(e.target.value)}
+                onChange={(e) => setCounted(formatAmountInput(e.target.value))}
                 inputMode="decimal"
                 className={inputCls}
                 placeholder="0.00"

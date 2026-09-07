@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore, RecordItem } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   Card,
   ConfirmDelete,
@@ -194,7 +194,7 @@ export default function Paletas() {
               <Field label="Monto (MXN)">
                 <input
                   value={payAmount}
-                  onChange={(e) => setPayAmount(e.target.value)}
+                  onChange={(e) => setPayAmount(formatAmountInput(e.target.value))}
                   inputMode="decimal"
                   className={inputCls}
                   placeholder="0.00"

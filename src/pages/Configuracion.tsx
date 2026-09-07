@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore, mergeSettings } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import { PageShell } from '../components/ui'
 
 export default function Configuracion() {
@@ -195,7 +195,7 @@ function KpiEdit({
         <div className="flex items-center gap-2">
           <input
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => setValue(formatAmountInput(e.target.value))}
             inputMode="decimal"
             className="flex-1 min-w-0 border border-slate-200 rounded px-2 py-1 text-xl font-bold"
             autoFocus

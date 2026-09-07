@@ -136,7 +136,7 @@ export default function ModalCobroTarjeta({
             <div className="text-3xl font-bold text-slate-900">{formatMXN(totalCents)}</div>
             <div className="text-xs text-slate-500 mb-4">Lo que paga el cliente</div>
 
-            <div className="bg-pink-50 border border-pink-200 rounded-lg p-3 mb-4">
+            <div className="bg-blue-50/70 border border-blue-200 rounded-lg p-3 mb-4">
               <div className="flex justify-between items-baseline">
                 <span className="text-sm text-slate-700 font-medium">Recibirás (a 1 mes)</span>
                 <span className="text-xl font-bold text-slate-900">{formatMXN(netCents)}</span>
@@ -164,7 +164,7 @@ export default function ModalCobroTarjeta({
               </button>
               <button
                 onClick={start}
-                className="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg"
+                className="flex-1 bg-emerald-200 hover:bg-emerald-300 text-emerald-950 font-bold py-3 rounded-lg"
               >
                 Sí, cobrar
               </button>

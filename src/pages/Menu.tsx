@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore, Product } from '../store/useStore'
-import { formatMXN, parseToCents } from '../lib/money'
+import { formatMXN, parseToCents, formatAmountInput } from '../lib/money'
 import {
   CategoryPicker,
   ConfirmDelete,
@@ -424,7 +424,7 @@ export default function Menu() {
                   <span className="text-sm font-medium">Precio (MXN)</span>
                   <input
                     value={form.price}
-                    onChange={(e) => setForm({ ...form, price: e.target.value })}
+                    onChange={(e) => setForm({ ...form, price: formatAmountInput(e.target.value) })}
                     inputMode="decimal"
                     className="mt-1 w-full border border-slate-200 rounded px-3 py-2"
                     placeholder="0.00"
@@ -434,7 +434,7 @@ export default function Menu() {
                   <span className="text-sm font-medium">Costo (MXN)</span>
                   <input
                     value={form.cost}
-                    onChange={(e) => setForm({ ...form, cost: e.target.value })}
+                    onChange={(e) => setForm({ ...form, cost: formatAmountInput(e.target.value) })}
                     inputMode="decimal"
                     className="mt-1 w-full border border-slate-200 rounded px-3 py-2"
                     placeholder="0.00"
