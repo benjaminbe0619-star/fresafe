@@ -405,7 +405,7 @@ export default function Menu() {
 
       {editing && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-md max-h-[90vh] overflow-auto">
+          <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md max-h-[90vh] overflow-auto">
             <h3 className="text-xl font-bold mb-4">
               {editing === 'new' ? 'Nuevo producto' : 'Editar producto'}
             </h3>
@@ -503,7 +503,7 @@ export default function Menu() {
 
       {confirmDelete && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl shadow-xl p-6 max-w-sm w-full">
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full">
             <h3 className="font-bold text-lg mb-2">¿Estás seguro?</h3>
             <p className="text-slate-600 mb-5">
               Se eliminará el producto «{confirmDelete.name}».

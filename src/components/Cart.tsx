@@ -157,7 +157,7 @@ export default function Cart({ onPayCash, onPayCard, onClose }: Props) {
           <button
             onClick={onPayCard}
             disabled={cart.length === 0}
-            className="bg-blue-600 active:bg-blue-700 lg:hover:bg-blue-700 disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
+            className="bg-blue-200 active:bg-blue-300 lg:hover:bg-blue-300 disabled:opacity-30 disabled:cursor-not-allowed text-blue-950 font-bold py-3.5 lg:py-3 px-2 rounded-xl lg:rounded-lg text-sm lg:text-base leading-tight"
           >
             Cobrar con tarjeta
           </button>

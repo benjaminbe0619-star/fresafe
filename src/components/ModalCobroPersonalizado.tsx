@@ -21,7 +21,7 @@ export default function ModalCobroPersonalizado({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onCancel}>
       <div
-        className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6"
+        className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <h3 className="text-[11px] font-bold uppercase tracking-[0.08em] text-slate-400 mb-4">

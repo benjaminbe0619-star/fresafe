@@ -129,7 +129,7 @@ export default function ModalCobroTarjeta({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
         {state.kind === 'confirm' && (
           <>
             <h3 className="text-xl font-bold mb-1">¿Cobrar con tarjeta?</h3>

@@ -13,7 +13,7 @@ export default function LateConfirmationToast({ amountCents, onDismiss }: Props)
   }, [onDismiss])
 
   return (
-    <div className="fixed top-4 right-4 z-[60] bg-amber-50 border-2 border-amber-300 rounded-xl shadow-xl p-4 max-w-sm animate-in">
+    <div className="fixed top-4 right-4 z-[60] bg-amber-50 border-2 border-amber-300 rounded-2xl shadow-xl p-4 max-w-sm animate-in">
       <div className="flex items-start gap-3">
         <div className="shrink-0 w-9 h-9 rounded-full bg-amber-200 text-amber-700 flex items-center justify-center">
           <svg

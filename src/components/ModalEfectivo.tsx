@@ -37,7 +37,7 @@ export default function ModalEfectivo({ totalCents, onCancel, onConfirm }: Props
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-5xl max-h-[92vh] flex flex-col">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-5xl max-h-[92vh] flex flex-col">
         <div className="p-5 border-b border-slate-200">
           <h3 className="text-xl font-bold">¿Con qué pagará el cliente?</h3>
           <div className="text-sm text-slate-500 mt-1">
