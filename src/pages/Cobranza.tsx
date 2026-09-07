@@ -250,7 +250,7 @@ export default function Cobranza() {
                   className={
                     'relative rounded-xl shadow overflow-hidden hover:shadow-lg active:scale-[0.98] transition text-left border-2 cursor-pointer select-none ' +
                     (inCart > 0
-                      ? 'bg-violet-50 border-violet-400 ring-2 ring-violet-200 text-slate-900'
+                      ? 'bg-pink-50 border-pink-400 ring-2 ring-pink-200 text-slate-900'
                       : 'bg-white border-slate-200 text-slate-900')
                   }
                 >
