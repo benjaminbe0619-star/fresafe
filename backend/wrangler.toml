@@ -1,0 +1,16 @@
+name = "culinaryfestpost"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[vars]
+TERMINAL_ID = "NEWLAND_N950__N950NCC904842032"
+EXPIRATION_TIME = "PT3M"
+
+[[kv_namespaces]]
+binding = "LATE_CONFIRMATIONS"
+id = "22f02f378be4413eb0e22de34fd67ce6"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "culinaryfest-db"
+database_id = "78b693a2-e203-455c-8b83-106a8541909e"
