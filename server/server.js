@@ -299,22 +299,25 @@ app.post('/products', wrap(async (req, res) => {
 
 app.put('/products/:id', wrap(async (req, res) => {
   const body = req.body ?? {}
+  // La foto SOLO se modifica si el cambio la incluye explícitamente
+  // (undefined = no tocar; null = quitarla; string = reemplazarla).
   await q(
     `UPDATE products SET
        name = COALESCE($1, name),
        price_cents = COALESCE($2, price_cents),
        cost_cents = COALESCE($3, cost_cents),
-       image_data_url = $4,
-       category = COALESCE($5, category),
-       owner = COALESCE($6, owner),
-       active = COALESCE($7, active),
-       updated_at = $8
-     WHERE id = $9`,
+       image_data_url = CASE WHEN $4::boolean THEN $5 ELSE image_data_url END,
+       category = COALESCE($6, category),
+       owner = COALESCE($7, owner),
+       active = COALESCE($8, active),
+       updated_at = $9
+     WHERE id = $10`,
     [
       body.name ?? null,
       body.priceCents ?? null,
       body.costCents ?? null,
-      body.imageDataUrl !== undefined ? body.imageDataUrl : null,
+      body.imageDataUrl !== undefined,
+      body.imageDataUrl ?? null,
       body.category !== undefined ? body.category : null,
       body.owner ?? null,
       body.active === undefined ? null : body.active ? 1 : 0,

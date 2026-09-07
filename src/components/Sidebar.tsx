@@ -106,7 +106,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="hidden md:flex w-16 shrink-0 bg-pink-200 text-pink-900 py-3 px-2 flex-col gap-1 overflow-y-auto">
+      <aside className="hidden md:flex w-16 shrink-0 bg-pink-200 text-pink-900 py-3 px-2 flex-col gap-1 overflow-hidden overscroll-none">
         <img
           src="/imagenes/logo.png"
           alt="Fresa Fé"

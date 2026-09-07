@@ -283,12 +283,13 @@ export default {
         const id = productMatch[1]
         if (method === 'PUT') {
           const body = (await req.json()) as Partial<Product>
+          // La foto SOLO se modifica si el cambio la incluye explícitamente.
           await env.DB.prepare(
             `UPDATE products SET
                name = COALESCE(?, name),
                price_cents = COALESCE(?, price_cents),
                cost_cents = COALESCE(?, cost_cents),
-               image_data_url = ?,
+               image_data_url = CASE WHEN ? = 1 THEN ? ELSE image_data_url END,
                category = COALESCE(?, category),
                owner = COALESCE(?, owner),
                active = COALESCE(?, active),
@@ -299,7 +300,8 @@ export default {
               body.name ?? null,
               body.priceCents ?? null,
               body.costCents ?? null,
-              body.imageDataUrl !== undefined ? body.imageDataUrl : null,
+              body.imageDataUrl !== undefined ? 1 : 0,
+              body.imageDataUrl ?? null,
               body.category !== undefined ? body.category : null,
               body.owner ?? null,
               body.active === undefined ? null : body.active ? 1 : 0,
